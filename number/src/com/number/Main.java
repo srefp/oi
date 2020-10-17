@@ -5,19 +5,19 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
-        int p = scanner.nextInt();
+        long a = scanner.nextLong();
+        long b = scanner.nextLong();
+        long p = scanner.nextLong();
         System.out.println(f(a, b, p));
     }
 
-    public static int f(int a, int b, int p) {
-        int result = 1%p;
+    public static long f(long a, long b, long p) {
+        long result = 1%p;
         while (b != 0) {
             if ((b&1) == 1) {
-                result = (int)1l*result*a%p;
+                result = result*a%p;
             }
-            a = (int)1l*a*a%p;
+            a = a*a%p;
             b>>=1;
         }
 
